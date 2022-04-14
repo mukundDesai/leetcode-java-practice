@@ -1,9 +1,9 @@
 
 public class Driver {
     public static void main(String[] args) {
-        Solution sol = new Solution();
-        String s = "[[]]][";
-        sol.isValid(s);
-        System.out.println(sol.isValid(s));
+        BinarySearch sol = new BinarySearch();
+        int[] nums = { 5 };
+        int target = 5;
+        System.out.println(sol.search(nums, target));
     }
 }

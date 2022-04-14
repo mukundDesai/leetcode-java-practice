@@ -6,7 +6,7 @@ import java.util.*;
  * else return false;
  */
 
-class Solution {
+class ValidParantheses {
     public boolean isValid(String s) {
         if (s.length() % 2 != 0)
             return false;
