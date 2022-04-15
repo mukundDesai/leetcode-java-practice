@@ -22,24 +22,18 @@ class BinarySearch {
     public int search(int[] nums, int target) {
         int high = nums.length - 1;
         int low = 0;
-        int mid = (high + low) / 2;
 
-        if (nums[high] == target)
-            return high;
-        if (nums[low] == target)
-            return low;
-
-        while (mid < high && mid > low) {
+        while (low <= high) {
+            int mid = (high + low) / 2;
             if (target > nums[mid]) {
-                low = mid;
-                mid = (high + low) / 2;
+                low = mid + 1;
             } else if (target < nums[mid]) {
-                high = mid;
-                mid = (high + low) / 2;
+                high = mid - 1;
             } else {
                 return mid;
             }
         }
+
         return -1;
     }
 }
