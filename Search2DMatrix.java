@@ -2,22 +2,19 @@
 
 // run the outer loop from 0 to m-1 and inner loop for a binary search O(nlogn)
 
+//
+
 public class Search2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        for (int i = 0; i < m; i++) {
-            int low = 0;
-            int high = n - 1;
-            while (low <= high) {
-                int mid = (high + low) / 2;
-                if (target == matrix[i][mid])
-                    return true;
-                else if (target > matrix[i][mid])
-                    low = mid + 1;
-                else
-                    high = mid - 1;
-            }
+        int column = matrix[0].length - 1;
+        int row = 0;
+        while (row < matrix.length && column >= 0) {
+            if (target == matrix[row][column])
+                return true;
+            else if (target > matrix[row][column])
+                row++;
+            else
+                column--;
         }
         return false;
     }
