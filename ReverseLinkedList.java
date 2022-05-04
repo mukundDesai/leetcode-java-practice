@@ -20,13 +20,14 @@ public class ReverseLinkedList {
 
     class Solution {
         public ListNode reverseList(ListNode head) {
-            ListNode reverse = new ListNode();
-            while (true) {
-                if (head == null) {
-                    break;
-                }
+            ListNode prev = null;
+            while (head != null) {
+                ListNode temp = prev;
+                prev = head;
+                head = head.next;
+                prev.next = temp;
             }
-            return reverse;
+            return prev;
         }
     }
 }
